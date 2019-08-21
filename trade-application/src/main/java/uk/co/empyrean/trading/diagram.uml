@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-33.0" y="342.5">uk.co.empyrean.trading.application.ports.in.BuyStockUseCase</node>
+    <node x="47.0" y="102.5">uk.co.empyrean.trading.application.ports.out.CommitTradePort</node>
+    <node x="-33.0" y="462.5">uk.co.empyrean.trading.persistence.repository.TradeRepository</node>
+    <node x="293.0" y="702.5">uk.co.empyrean.trading.persistence.model.PartyJpaEntity</node>
+    <node x="439.0" y="-17.5">uk.co.empyrean.trading.persistence.adapter.PartyPersistenceAdapter</node>
+    <node x="287.0" y="462.5">uk.co.empyrean.trading.persistence.repository.PartyRepository</node>
+    <node x="297.0" y="222.5">uk.co.empyrean.trading.application.ports.in.GetStockPriceUseCase</node>
+    <node x="-33.0" y="582.5">uk.co.empyrean.web.api.controllers.TradeController</node>
+    <node x="307.0" y="862.5">uk.co.empyrean.web.api.responses.Trade</node>
+    <node x="-33.0" y="222.5">uk.co.empyrean.trading.application.service.BuyStockService</node>
+    <node x="-27.0" y="862.5">uk.co.empyrean.trading.persistence.model.TradeJpaEntity</node>
+    <node x="287.0" y="582.5">uk.co.empyrean.web.api.requests.BuyStockRequest</node>
+    <node x="-27.0" y="702.5">uk.co.empyrean.hexagon.SelfValidating</node>
+    <node x="507.0" y="862.5">uk.co.empyrean.trading.domain.Trade</node>
+    <node x="457.0" y="102.5">uk.co.empyrean.trading.application.ports.out.LoadPartyDetailsPort</node>
+    <node x="-1.0" y="-17.5">uk.co.empyrean.trading.persistence.adapter.TradePersistenceAdapter</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="uk.co.empyrean.trading.application.service.BuyStockService" target="uk.co.empyrean.trading.application.ports.in.BuyStockUseCase">
+      <point x="0.0" y="17.5" />
+      <point x="0.0" y="-17.5" />
+    </edge>
+    <edge source="uk.co.empyrean.trading.persistence.adapter.TradePersistenceAdapter" target="uk.co.empyrean.trading.application.ports.out.CommitTradePort">
+      <point x="0.0" y="17.5" />
+      <point x="0.0" y="-17.5" />
+    </edge>
+    <edge source="uk.co.empyrean.trading.persistence.adapter.PartyPersistenceAdapter" target="uk.co.empyrean.trading.application.ports.out.LoadPartyDetailsPort">
+      <point x="0.0" y="17.5" />
+      <point x="0.0" y="-17.5" />
+    </edge>
+  </edges>
+  <settings layout="Directed Orthogonal" zoom="0.7667014613778705" x="902.3914227365555" y="340.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+

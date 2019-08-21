@@ -1,0 +1,36 @@
+plugins {
+    id 'io.freefair.lombok' version '3.8.4'
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+}
+
+allprojects {
+
+    group = 'uk.co.empyrean'
+    version = '0.0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'java-library'
+    apply plugin: 'io.freefair.lombok'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
+
+    sourceCompatibility = JavaVersion.VERSION_12
+    targetCompatibility = JavaVersion.VERSION_12
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.7.RELEASE")
+        }
+    }
+
+    springBoot {
+        mainClassName = "uk.co.empyrean.web.TradingApplication"
+    }
+}
+
