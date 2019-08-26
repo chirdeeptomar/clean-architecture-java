@@ -2,9 +2,13 @@ dependencies {
     implementation project(':hexagon-common')
     implementation project(':trade-application')
     implementation project(':trade-driven-adapter')
-    compileOnly 'org.projectlombok:lombok:1.18.8'
-    annotationProcessor 'org.projectlombok:lombok:1.18.8'
 
-    implementation "org.springframework.boot:spring-boot-starter-web:2.1.7.RELEASE"
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'io.springfox:springfox-swagger2'
+    implementation 'io.springfox:springfox-swagger-ui'
+    implementation "org.springframework.boot:spring-boot-starter-web"
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

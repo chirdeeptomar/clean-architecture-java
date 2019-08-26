@@ -1,14 +1,13 @@
-package uk.co.empyrean.web.api.requests;
+package uk.co.empyrean.trading.api.requests;
 
 import lombok.Value;
 
-import java.util.Currency;
 import java.util.UUID;
 
 @Value
 public class BuyStockRequest {
     private Integer quantity;
-    private Currency currency;
+    private String currencyCode;
     private String stock;
     private UUID buyer;
     private UUID seller;

@@ -1,4 +1,4 @@
-package uk.co.empyrean.web.api.responses;
+package uk.co.empyrean.trading.api.responses;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: "trading-application"
+
+
+server:
+  port: 8081

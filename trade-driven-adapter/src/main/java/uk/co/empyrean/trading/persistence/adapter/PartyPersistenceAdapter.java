@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Component
 @AllArgsConstructor
-public class PartyPersistenceAdapter implements LoadPartyDetailsPort {
+class PartyPersistenceAdapter implements LoadPartyDetailsPort {
 
     private final PartyRepository partyRepository;
 

@@ -9,7 +9,7 @@ import uk.co.empyrean.trading.persistence.repository.TradeRepository;
 
 @Component
 @AllArgsConstructor
-public class TradePersistenceAdapter implements CommitTradePort {
+class TradePersistenceAdapter implements CommitTradePort {
 
     private final TradeRepository tradeRepository;
 
