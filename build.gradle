@@ -1,39 +1,22 @@
-plugins {
-    id 'io.freefair.lombok' version '3.8.4'
-    id 'org.springframework.boot' version '2.1.7.RELEASE'
-}
+apply plugin: 'java'
 
-allprojects {
+group = 'uk.co.empyrean'
+version = '0.0.1-SNAPSHOT'
 
-    group = 'uk.co.empyrean'
-    version = '0.0.1-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_12
+targetCompatibility = JavaVersion.VERSION_12
 
-    apply plugin: 'java'
+subprojects {
     apply plugin: 'idea'
-    apply plugin: 'java-library'
-    apply plugin: 'io.freefair.lombok'
-    apply plugin: 'org.springframework.boot'
+//    apply plugin: 'org.springframework.boot'
 
-    sourceCompatibility = JavaVersion.VERSION_12
-    targetCompatibility = JavaVersion.VERSION_12
+    apply from: "$rootDir/dependencies.gradle"
 
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        implementation platform('com.h2database:h2:1.4.199')
-        implementation platform('javax.validation:validation-api:2.0.1.Final')
-        implementation platform('org.projectlombok:lombok:1.18.8')
-        implementation platform('javax.inject:javax.inject:1')
-        implementation platform('javax.transaction:javax.transaction-api:1.3')
-        implementation platform('io.springfox:springfox-swagger2:2.9.2')
-        implementation platform('io.springfox:springfox-swagger-ui:2.9.2')
-        implementation platform('org.springframework.boot:spring-boot-dependencies:2.1.7.RELEASE')
-    }
-
-    springBoot {
-        mainClassName = 'uk.co.empyrean.trading.TradingApplication'
+//    springBoot {
+//        mainClassName = 'uk.co.empyrean.trading.driver.TradingApplication'
+//    }
+//
+    configurations {
+        compile.exclude module: "spring-boot-starter-tomcat"
     }
 }
-

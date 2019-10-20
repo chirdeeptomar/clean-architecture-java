@@ -2,6 +2,17 @@ spring:
   application:
     name: "trading-application"
 
+  datasource:
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 50
+    url: jdbc:postgresql://localhost:32769/postgres
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: create
 
 server:
   port: 8081

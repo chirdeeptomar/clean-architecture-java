@@ -1,14 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+}
+
+apply plugin: 'org.springframework.boot'
+
+ext.moduleName = 'uk.co.empyrean.trading.adapters.driver.rest'
+
+compileJava {
+    inputs.property("moduleName", moduleName)
+    doFirst {
+        options.compilerArgs = [
+                '--module-path', classpath.asPath,
+                '--add-modules', 'spring.web',
+                '--add-modules', 'spring.context',
+                '--add-modules', 'spring.boot',
+                '--add-modules', 'spring.boot.autoconfigure',
+                '--add-modules', 'spring.beans',
+                '--add-modules', 'spring.core',
+                '--add-modules', 'uk.co.empyrean.trading.core',
+                '--add-modules', 'uk.co.empyrean.trading.driven'
+        ]
+        classpath = files()
+    }
+}
+
 dependencies {
     implementation project(':hexagon-common')
     implementation project(':trade-application')
     implementation project(':trade-driven-adapter')
 
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-
-    implementation 'io.springfox:springfox-swagger2'
-    implementation 'io.springfox:springfox-swagger-ui'
     implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-jetty"
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

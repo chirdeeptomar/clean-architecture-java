@@ -1,3 +1,5 @@
+rootProject.name = 'clean-architecture-java'
+
 include 'hexagon-common'
 include 'trade-driven-adapter'
 include 'trade-driver-adapter'
