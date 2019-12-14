@@ -3,8 +3,8 @@ apply plugin: 'java'
 group = 'uk.co.empyrean'
 version = '0.0.1-SNAPSHOT'
 
-sourceCompatibility = JavaVersion.VERSION_12
-targetCompatibility = JavaVersion.VERSION_12
+sourceCompatibility = JavaVersion.VERSION_13
+targetCompatibility = JavaVersion.VERSION_13
 
 subprojects {
     apply plugin: 'idea'
@@ -19,4 +19,16 @@ subprojects {
     configurations {
         compile.exclude module: "spring-boot-starter-tomcat"
     }
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs += "--enable-preview"
+}
+
+tasks.withType(Test) {
+    jvmArgs += "--enable-preview"
+}
+
+tasks.withType(JavaExec) {
+    jvmArgs += '--enable-preview'
 }

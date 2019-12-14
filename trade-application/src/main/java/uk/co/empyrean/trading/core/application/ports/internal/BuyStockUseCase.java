@@ -37,7 +37,7 @@ public interface BuyStockUseCase {
             this.buyer = buyer;
             this.seller = seller;
             this.rate = rate;
-            this.validateSelf();
+            this.validateSelf(this);
         }
 
         public Integer getQuantity() {

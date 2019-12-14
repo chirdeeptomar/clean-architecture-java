@@ -14,7 +14,7 @@ public interface GetStockPriceUseCase {
 
         public GetStockPriceCommand(String tick) {
             this.tick = tick;
-            this.validateSelf();
+            this.validateSelf(this);
         }
     }
 }

@@ -12,4 +12,5 @@ open module uk.co.empyrean.trading.driven {
     requires spring.boot.starter.aop;
     requires spring.boot.starter.data.jpa;
     requires uk.co.empyrean.trading.core;
+    requires spring.boot.autoconfigure;
 }
