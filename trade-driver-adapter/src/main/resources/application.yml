@@ -6,7 +6,7 @@ spring:
     hikari:
       connection-timeout: 20000
       maximum-pool-size: 50
-    url: jdbc:postgresql://localhost:32769/trading
+    url: jdbc:postgresql://localhost:5432/trading
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver

@@ -1,8 +1,5 @@
 open module uk.co.empyrean.trading.driven {
-    exports uk.co.empyrean.trading.driven.persistence.repository;
-    exports uk.co.empyrean.trading.driven.persistence.model;
     exports uk.co.empyrean.trading.driven.persistence.adapter;
-    exports uk.co.empyrean.trading.driven.config;
 
     requires javax.inject;
     requires java.persistence;

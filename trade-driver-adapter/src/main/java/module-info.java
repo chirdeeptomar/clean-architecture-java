@@ -7,7 +7,4 @@ open module uk.co.empyrean.trading.adapters.driver.rest {
     requires spring.core;
 
     requires uk.co.empyrean.trading.core;
-    requires uk.co.empyrean.trading.driven;
-
-    uses uk.co.empyrean.trading.core.application.service.BuyStockService;
 }
