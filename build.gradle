@@ -1,3 +1,8 @@
+plugins {
+    id "org.springframework.boot" version "2.2.2.RELEASE" apply false
+    id "io.freefair.lombok" version "5.1.0" apply false
+}
+
 apply plugin: 'java'
 
 group = 'uk.co.empyrean'
@@ -8,14 +13,9 @@ targetCompatibility = JavaVersion.VERSION_13
 
 subprojects {
     apply plugin: 'idea'
-//    apply plugin: 'org.springframework.boot'
 
     apply from: "$rootDir/dependencies.gradle"
 
-//    springBoot {
-//        mainClassName = 'uk.co.empyrean.trading.driver.TradingApplication'
-//    }
-//
     configurations {
         compile.exclude module: "spring-boot-starter-tomcat"
     }

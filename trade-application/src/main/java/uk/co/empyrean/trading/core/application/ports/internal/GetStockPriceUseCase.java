@@ -1,5 +1,7 @@
 package uk.co.empyrean.trading.core.application.ports.internal;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import uk.co.empyrean.hexagon.SelfValidating;
 
 import javax.validation.constraints.NotNull;
@@ -9,18 +11,16 @@ public interface GetStockPriceUseCase {
 
     Optional<Float> getStockPrice(GetStockPriceCommand stock);
 
+    @Getter
+    @RequiredArgsConstructor
     class GetStockPriceCommand extends SelfValidating<GetStockPriceCommand> {
 
         @NotNull
-        private String stock;
+        private final String stock;
 
-        public GetStockPriceCommand(String stock) {
-            this.stock = stock;
+        @Override
+        public void validate() {
             this.validateSelf(this);
-        }
-
-        public String getStock() {
-            return stock;
         }
     }
 }

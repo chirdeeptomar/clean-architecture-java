@@ -222,4 +222,7 @@ gradle-app.setting
 # Ignore all local history of files
 .history
 
+### Lombok ###
+lombok.config
+
 # End of https://www.gitignore.io/api/java,eclipse,intellij,maven,gradle

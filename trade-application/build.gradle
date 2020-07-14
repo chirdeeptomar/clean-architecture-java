@@ -1,3 +1,7 @@
+plugins {
+    id "io.freefair.lombok"
+}
+
 apply plugin: 'java-library'
 
 ext.moduleName = 'uk.co.empyrean.trading.core'
@@ -7,8 +11,7 @@ compileJava {
     doFirst {
         options.compilerArgs = [
                 '--module-path', classpath.asPath,
-                '--add-modules', 'java.validation',
-                '--add-modules', 'javax.inject',
+                '--add-modules', 'lombok',
                 '--add-modules', 'java.validation',
                 '--add-modules', 'spring.context',
                 '--add-modules', 'uk.co.empyrean.hexagon',
@@ -20,9 +23,9 @@ compileJava {
 dependencies {
     implementation project(':hexagon-common')
 
-    implementation 'javax.inject:javax.inject'
+    implementation 'org.mapstruct:mapstruct-processor'
     implementation 'javax.validation:validation-api'
     implementation 'org.springframework:spring-context'
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }

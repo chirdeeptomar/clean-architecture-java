@@ -1,5 +1,6 @@
 package uk.co.empyrean.trading.core.application.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import uk.co.empyrean.trading.core.application.ports.external.CommitTradePort;
 import uk.co.empyrean.trading.core.application.ports.external.LoadPartyDetailsPort;
@@ -10,15 +11,11 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Component
-public class BuyStockService implements BuyStockUseCase {
+@RequiredArgsConstructor
+class BuyStockService implements BuyStockUseCase {
 
     private final CommitTradePort commitTradePort;
     private final LoadPartyDetailsPort loadPartyDetailsPort;
-
-    public BuyStockService(CommitTradePort commitTradePort, LoadPartyDetailsPort loadPartyDetailsPort) {
-        this.commitTradePort = commitTradePort;
-        this.loadPartyDetailsPort = loadPartyDetailsPort;
-    }
 
     @Override
     public boolean buyStock(BuyStockCommand command) {

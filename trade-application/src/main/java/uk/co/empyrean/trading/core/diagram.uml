@@ -3,89 +3,173 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="1967.0" y="-17.5">uk.co.empyrean.trading.application.ports.in.BuyStockUseCase</node>
-    <node x="967.0" y="382.5">uk.co.empyrean.trading.application.ports.out.CommitTradePort</node>
-    <node x="-33.0" y="382.5">uk.co.empyrean.trading.persistence.repository.TradeRepository</node>
-    <node x="1213.0" y="182.5">uk.co.empyrean.trading.persistence.model.PartyJpaEntity</node>
-    <node x="1519.0" y="302.5">uk.co.empyrean.trading.persistence.adapter.PartyPersistenceAdapter</node>
-    <node x="-23.0" y="582.5">uk.co.empyrean.trading.application.ports.in.GetStockPriceUseCase</node>
-    <node x="1567.0" y="182.5">uk.co.empyrean.trading.persistence.repository.PartyRepository</node>
-    <node x="1967.0" y="102.5">uk.co.empyrean.trading.application.service.BuyStockService</node>
-    <node x="253.0" y="462.5">uk.co.empyrean.trading.persistence.model.TradeJpaEntity</node>
-    <node x="373.0" y="582.5">uk.co.empyrean.hexagon.SelfValidating</node>
-    <node x="1027.0" y="102.5">uk.co.empyrean.trading.domain.Trade</node>
-    <node x="1937.0" y="302.5">uk.co.empyrean.trading.application.ports.out.LoadPartyDetailsPort</node>
-    <node x="559.0" y="382.5">uk.co.empyrean.trading.persistence.adapter.TradePersistenceAdapter</node>
+    <node x="921.7364661654134" y="186.0">uk.co.empyrean.trading.core.application.service.BuyStockService</node>
+    <node x="1218.0" y="269.0">uk.co.empyrean.trading.driven.config.PersistenceConfig</node>
+    <node x="592.0" y="269.0">uk.co.empyrean.trading.core.application.ports.external.GetStockPricePort</node>
+    <node x="0.0" y="269.0">uk.co.empyrean.trading.driver.api.responses.StockPriceResponse</node>
+    <node x="295.5" y="88.0">uk.co.empyrean.trading.driver.api.requests.BuyStockRequest</node>
+    <node x="1214.8657894736841" y="186.0">uk.co.empyrean.trading.driven.persistence.adapter.PartyPersistenceAdapter</node>
+    <node x="905.75" y="0.0">uk.co.empyrean.trading.core.domain.Trade</node>
+    <node x="150.99999999999994" y="357.0">uk.co.empyrean.trading.driver.api.controllers.StockController</node>
+    <node x="1051.5" y="88.0">uk.co.empyrean.trading.core.application.ports.external.LoadPartyDetailsPort</node>
+    <node x="798.0" y="357.0">uk.co.empyrean.trading.driven.thirdparty.adapter.StockPriceThirdPartyAdapter</node>
+    <node x="261.0" y="440.0">uk.co.empyrean.trading.driver.api.responses.TradeResponse</node>
+    <node x="791.5" y="88.0">uk.co.empyrean.trading.core.application.ports.external.CommitTradePort</node>
+    <node x="41.389849624059934" y="0.0">uk.co.empyrean.trading.driven.persistence.model.TradeJpaEntity</node>
+    <node x="53.343609022556166" y="186.0">uk.co.empyrean.trading.driven.persistence.adapter.TradePersistenceAdapter</node>
+    <node x="489.99999999999994" y="357.0">uk.co.empyrean.trading.core.application.service.GetStockPriceService</node>
+    <node x="921.0" y="269.0">uk.co.empyrean.trading.driven.thirdparty.client.StockPriceFetcher</node>
+    <node x="1304.25" y="0.0">uk.co.empyrean.trading.driven.persistence.model.PartyJpaEntity</node>
+    <node x="0.0" y="440.0">uk.co.empyrean.hexagon.SelfValidating</node>
+    <node x="283.99999999999994" y="269.0">uk.co.empyrean.trading.core.application.ports.internal.GetStockPriceUseCase</node>
+    <node x="35.5" y="88.0">uk.co.empyrean.trading.driven.persistence.repository.TradeRepository</node>
+    <node x="543.5" y="88.0">uk.co.empyrean.trading.core.application.ports.internal.BuyStockUseCase</node>
+    <node x="1360.5" y="88.0">uk.co.empyrean.trading.driven.persistence.repository.PartyRepository</node>
+    <node x="457.3436090225562" y="186.0">uk.co.empyrean.trading.driver.api.controllers.TradeController</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="uk.co.empyrean.trading.application.service.BuyStockService" target="uk.co.empyrean.trading.domain.Trade">
-      <point x="-113.0" y="-0.0" />
-      <point x="53.0" y="-0.0" />
+    <edge source="uk.co.empyrean.trading.core.application.service.BuyStockService" target="uk.co.empyrean.trading.core.application.ports.external.LoadPartyDetailsPort">
+      <point x="97.71428571428567" y="-19.0" />
+      <point x="1133.450751879699" y="166.0" />
+      <point x="1159.5" y="166.0" />
+      <point x="-36.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.application.service.BuyStockService" target="uk.co.empyrean.trading.application.ports.in.BuyStockUseCase">
-      <point x="0.0" y="-17.5" />
-      <point x="0.0" y="17.5" />
+    <edge source="uk.co.empyrean.trading.driven.persistence.adapter.TradePersistenceAdapter" target="uk.co.empyrean.trading.driven.persistence.repository.TradeRepository">
+      <point x="-27.0" y="-19.0" />
+      <point x="188.34360902255617" y="166.0" />
+      <point x="206.5" y="166.0" />
+      <point x="57.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.application.service.BuyStockService" target="uk.co.empyrean.trading.application.ports.out.LoadPartyDetailsPort">
-      <point x="0.0" y="17.5" />
-      <point x="0.0" y="-17.5" />
+    <edge source="uk.co.empyrean.trading.driven.persistence.repository.TradeRepository" target="uk.co.empyrean.trading.driven.persistence.model.TradeJpaEntity">
+      <point x="0.0" y="-19.0" />
+      <point x="0.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.persistence.adapter.PartyPersistenceAdapter" target="uk.co.empyrean.trading.application.ports.out.LoadPartyDetailsPort">
-      <point x="161.0" y="-0.0" />
-      <point x="-143.0" y="-0.0" />
+    <edge source="uk.co.empyrean.trading.driven.thirdparty.adapter.StockPriceThirdPartyAdapter" target="uk.co.empyrean.trading.core.application.ports.external.GetStockPricePort">
+      <point x="-124.0" y="-19.0" />
+      <point x="860.0" y="332.0" />
+      <point x="802.0" y="332.0" />
+      <point x="84.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.persistence.adapter.TradePersistenceAdapter" target="uk.co.empyrean.trading.application.ports.out.CommitTradePort">
-      <point x="161.0" y="-0.0" />
-      <point x="-113.0" y="-0.0" />
+    <edge source="uk.co.empyrean.trading.core.application.service.GetStockPriceService" target="uk.co.empyrean.trading.core.application.ports.internal.GetStockPriceUseCase">
+      <point x="-96.0" y="-19.0" />
+      <point x="538.0" y="332.0" />
+      <point x="524.0" y="332.0" />
+      <point x="96.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.application.ports.out.CommitTradePort" target="uk.co.empyrean.trading.domain.Trade">
-      <point x="0.0" y="-17.5" />
-      <point x="0.0" y="17.5" />
+    <edge source="uk.co.empyrean.trading.core.application.service.BuyStockService" target="uk.co.empyrean.trading.core.application.ports.external.CommitTradePort">
+      <point x="-32.57142857142867" y="-19.0" />
+      <point x="1003.1650375939847" y="166.0" />
+      <point x="981.5" y="166.0" />
+      <point x="76.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.persistence.adapter.TradePersistenceAdapter" target="uk.co.empyrean.trading.persistence.repository.TradeRepository">
-      <point x="-161.0" y="-0.0" />
-      <point x="113.0" y="-0.0" />
+    <edge source="uk.co.empyrean.trading.driver.api.controllers.TradeController" target="uk.co.empyrean.trading.driver.api.requests.BuyStockRequest">
+      <point x="-76.0" y="-19.0" />
+      <point x="495.3436090225562" y="156.0" />
+      <point x="409.5" y="156.0" />
+      <point x="0.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.persistence.adapter.TradePersistenceAdapter" target="uk.co.empyrean.trading.persistence.model.TradeJpaEntity">
-      <point x="-161.0" y="10.0" />
-      <point x="360.0" y="410.0" />
-      <point x="0.0" y="-17.5" />
+    <edge source="uk.co.empyrean.trading.driven.persistence.adapter.PartyPersistenceAdapter" target="uk.co.empyrean.trading.driven.persistence.repository.PartyRepository">
+      <point x="129.5999999999999" y="-19.0" />
+      <point x="1506.465789473684" y="166.0" />
+      <point x="1531.5" y="166.0" />
+      <point x="57.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.application.service.BuyStockService" target="uk.co.empyrean.trading.application.ports.out.CommitTradePort">
-      <point x="113.0" y="-0.0" />
-      <point x="2280.0" y="120.0" />
-      <point x="2280.0" y="400.0" />
-      <point x="113.0" y="-0.0" />
+    <edge source="uk.co.empyrean.trading.core.application.service.BuyStockService" target="uk.co.empyrean.trading.core.application.ports.internal.BuyStockUseCase">
+      <point x="-97.71428571428578" y="-19.0" />
+      <point x="938.0221804511276" y="156.0" />
+      <point x="733.5" y="156.0" />
+      <point x="76.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.persistence.adapter.PartyPersistenceAdapter" target="uk.co.empyrean.trading.persistence.repository.PartyRepository">
-      <point x="0.0" y="-17.5" />
-      <point x="0.0" y="17.5" />
+    <edge source="uk.co.empyrean.trading.core.application.service.GetStockPriceService" target="uk.co.empyrean.trading.core.application.ports.external.GetStockPricePort">
+      <point x="96.0" y="-19.0" />
+      <point x="730.0" y="332.0" />
+      <point x="718.0" y="332.0" />
+      <point x="0.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.persistence.adapter.PartyPersistenceAdapter" target="uk.co.empyrean.trading.persistence.model.PartyJpaEntity">
-      <point x="-161.0" y="-0.0" />
-      <point x="1320.0" y="320.0" />
-      <point x="0.0" y="17.5" />
+    <edge source="uk.co.empyrean.trading.core.application.ports.external.CommitTradePort" target="uk.co.empyrean.trading.core.domain.Trade">
+      <point x="0.0" y="-19.0" />
+      <point x="905.5" y="68.0" />
+      <point x="946.25" y="68.0" />
+      <point x="-13.5" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.persistence.repository.PartyRepository" target="uk.co.empyrean.trading.persistence.model.PartyJpaEntity">
-      <point x="-113.0" y="-0.0" />
-      <point x="107.0" y="-0.0" />
+    <edge source="uk.co.empyrean.trading.driver.api.controllers.TradeController" target="uk.co.empyrean.trading.core.application.ports.internal.BuyStockUseCase">
+      <point x="0.0" y="-19.0" />
+      <point x="571.3436090225562" y="156.0" />
+      <point x="581.5" y="156.0" />
+      <point x="-76.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.persistence.adapter.TradePersistenceAdapter" target="uk.co.empyrean.trading.domain.Trade">
-      <point x="0.0" y="-17.5" />
-      <point x="720.0" y="120.0" />
-      <point x="-53.0" y="-0.0" />
+    <edge source="uk.co.empyrean.trading.driven.persistence.adapter.PartyPersistenceAdapter" target="uk.co.empyrean.trading.core.application.ports.external.LoadPartyDetailsPort">
+      <point x="-64.79999999999995" y="-19.0" />
+      <point x="1312.0657894736842" y="166.0" />
+      <point x="1303.5" y="166.0" />
+      <point x="108.0" y="19.0" />
     </edge>
-    <edge source="uk.co.empyrean.trading.persistence.repository.TradeRepository" target="uk.co.empyrean.trading.persistence.model.TradeJpaEntity">
-      <point x="0.0" y="17.5" />
-      <point x="80.0" y="480.0" />
-      <point x="-107.0" y="-0.0" />
+    <edge source="uk.co.empyrean.trading.driven.persistence.adapter.PartyPersistenceAdapter" target="uk.co.empyrean.trading.driven.persistence.model.PartyJpaEntity">
+      <point x="0.0" y="-19.0" />
+      <point x="1376.8657894736841" y="166.0" />
+      <point x="1350.0" y="166.0" />
+      <point x="1350.0" y="68.0" />
+      <point x="1358.25" y="68.0" />
+      <point x="-54.0" y="19.0" />
+    </edge>
+    <edge source="uk.co.empyrean.trading.driver.api.controllers.StockController" target="uk.co.empyrean.trading.core.application.ports.internal.GetStockPriceUseCase">
+      <point x="28.5" y="-19.0" />
+      <point x="293.49999999999994" y="332.0" />
+      <point x="331.99999999999994" y="332.0" />
+      <point x="-96.0" y="19.0" />
+    </edge>
+    <edge source="uk.co.empyrean.trading.driven.persistence.adapter.TradePersistenceAdapter" target="uk.co.empyrean.trading.core.domain.Trade">
+      <point x="81.0" y="-19.0" />
+      <point x="296.34360902255617" y="166.0" />
+      <point x="285.0" y="166.0" />
+      <point x="285.0" y="58.0" />
+      <point x="919.25" y="58.0" />
+      <point x="-40.5" y="19.0" />
+    </edge>
+    <edge source="uk.co.empyrean.trading.core.application.service.BuyStockService" target="uk.co.empyrean.trading.core.domain.Trade">
+      <point x="32.571428571428555" y="-19.0" />
+      <point x="1068.307894736842" y="166.0" />
+      <point x="1041.0" y="166.0" />
+      <point x="1041.0" y="58.0" />
+      <point x="1000.25" y="58.0" />
+      <point x="40.5" y="19.0" />
+    </edge>
+    <edge source="uk.co.empyrean.trading.driven.persistence.adapter.TradePersistenceAdapter" target="uk.co.empyrean.trading.core.application.ports.external.CommitTradePort">
+      <point x="135.0" y="-19.0" />
+      <point x="350.34360902255617" y="166.0" />
+      <point x="829.5" y="166.0" />
+      <point x="-76.0" y="19.0" />
+    </edge>
+    <edge source="uk.co.empyrean.trading.driven.thirdparty.adapter.StockPriceThirdPartyAdapter" target="uk.co.empyrean.trading.driven.thirdparty.client.StockPriceFetcher">
+      <point x="124.0" y="-19.0" />
+      <point x="1108.0" y="332.0" />
+      <point x="1110.0" y="332.0" />
+      <point x="63.0" y="19.0" />
+    </edge>
+    <edge source="uk.co.empyrean.trading.driven.persistence.repository.PartyRepository" target="uk.co.empyrean.trading.driven.persistence.model.PartyJpaEntity">
+      <point x="0.0" y="-19.0" />
+      <point x="1474.5" y="68.0" />
+      <point x="1466.25" y="68.0" />
+      <point x="54.0" y="19.0" />
+    </edge>
+    <edge source="uk.co.empyrean.trading.driven.persistence.adapter.TradePersistenceAdapter" target="uk.co.empyrean.trading.driven.persistence.model.TradeJpaEntity">
+      <point x="27.0" y="-19.0" />
+      <point x="242.34360902255617" y="166.0" />
+      <point x="274.0" y="166.0" />
+      <point x="274.0" y="68.0" />
+      <point x="221.38984962405993" y="68.0" />
+      <point x="72.0" y="19.0" />
+    </edge>
+    <edge source="uk.co.empyrean.trading.driver.api.controllers.StockController" target="uk.co.empyrean.trading.driver.api.responses.StockPriceResponse">
+      <point x="-85.5" y="-19.0" />
+      <point x="179.49999999999994" y="332.0" />
+      <point x="66.0" y="332.0" />
+      <point x="-66.0" y="19.0" />
     </edge>
   </edges>
-  <settings layout="Directed Orthogonal" zoom="0.6450921560222889" x="1123.5" y="300.0" />
-  <SelectedNodes>
-    <node>uk.co.empyrean.trading.application.ports.in.BuyStockUseCase</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="0.9453172205438066" x="973.3173537871525" y="433.4439117929051" />
+  <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>public</VISIBILITY>

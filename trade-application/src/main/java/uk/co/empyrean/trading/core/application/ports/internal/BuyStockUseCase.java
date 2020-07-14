@@ -1,5 +1,7 @@
 package uk.co.empyrean.trading.core.application.ports.internal;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import uk.co.empyrean.hexagon.SelfValidating;
 
 import javax.validation.constraints.NotNull;
@@ -10,58 +12,31 @@ public interface BuyStockUseCase {
 
     boolean buyStock(BuyStockCommand command);
 
+    @Getter
+    @RequiredArgsConstructor
     class BuyStockCommand extends SelfValidating<BuyStockCommand> {
 
         @NotNull
-        private Integer quantity;
+        private final Integer quantity;
 
         @NotNull
-        private Currency currency;
+        private final Currency currency;
 
         @NotNull
-        private String stock;
+        private final String stock;
 
         @NotNull
-        private UUID buyer;
+        private final UUID buyer;
 
         @NotNull
-        private UUID seller;
+        private final UUID seller;
 
         @NotNull
-        private Double rate;
+        private final Double rate;
 
-        public BuyStockCommand(Integer quantity, Currency currency, String stock, UUID buyer, UUID seller, Double rate) {
-            this.quantity = quantity;
-            this.currency = currency;
-            this.stock = stock;
-            this.buyer = buyer;
-            this.seller = seller;
-            this.rate = rate;
+        @Override
+        public void validate() {
             this.validateSelf(this);
-        }
-
-        public Integer getQuantity() {
-            return quantity;
-        }
-
-        public Currency getCurrency() {
-            return currency;
-        }
-
-        public String getStock() {
-            return stock;
-        }
-
-        public UUID getBuyer() {
-            return buyer;
-        }
-
-        public UUID getSeller() {
-            return seller;
-        }
-
-        public Double getRate() {
-            return rate;
         }
     }
 }

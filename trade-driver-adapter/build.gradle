@@ -1,8 +1,7 @@
 plugins {
-    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'org.springframework.boot'
+    id "io.freefair.lombok"
 }
-
-apply plugin: 'org.springframework.boot'
 
 ext.moduleName = 'uk.co.empyrean.trading.adapters.driver.rest'
 
@@ -11,14 +10,14 @@ compileJava {
     doFirst {
         options.compilerArgs = [
                 '--module-path', classpath.asPath,
-                '--add-modules', 'spring.web',
-                '--add-modules', 'spring.context',
-                '--add-modules', 'spring.boot',
-                '--add-modules', 'spring.boot.autoconfigure',
+                '--add-modules', 'lombok',
                 '--add-modules', 'spring.beans',
                 '--add-modules', 'spring.core',
-                '--add-modules', 'uk.co.empyrean.trading.core',
-                '--add-modules', 'uk.co.empyrean.trading.driven'
+                '--add-modules', 'spring.context',
+                '--add-modules', 'spring.web',
+                '--add-modules', 'spring.boot',
+                '--add-modules', 'spring.boot.autoconfigure',
+                '--add-modules', 'uk.co.empyrean.trading.core'
         ]
         classpath = files()
     }
@@ -29,8 +28,9 @@ dependencies {
     implementation project(':trade-application')
     implementation project(':trade-driven-adapter')
 
+    implementation 'org.mapstruct:mapstruct-processor'
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-jetty"
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }

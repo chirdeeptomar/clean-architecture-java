@@ -1,5 +1,6 @@
 package uk.co.empyrean.trading.driven.persistence.adapter;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import uk.co.empyrean.trading.core.application.ports.external.LoadPartyDetailsPort;
@@ -11,13 +12,10 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Component
+@RequiredArgsConstructor
 class PartyPersistenceAdapter implements LoadPartyDetailsPort {
 
     private final PartyRepository partyRepository;
-
-    PartyPersistenceAdapter(PartyRepository partyRepository) {
-        this.partyRepository = partyRepository;
-    }
 
     @Override
     public Optional<Trade.Party> getPartyById(UUID id) {

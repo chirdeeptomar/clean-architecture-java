@@ -1,5 +1,6 @@
 package uk.co.empyrean.trading.driven.persistence.adapter;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import uk.co.empyrean.trading.core.application.ports.external.CommitTradePort;
 import uk.co.empyrean.trading.core.domain.Trade;
@@ -7,13 +8,10 @@ import uk.co.empyrean.trading.driven.persistence.model.TradeJpaEntity;
 import uk.co.empyrean.trading.driven.persistence.repository.TradeRepository;
 
 @Component
+@RequiredArgsConstructor
 class TradePersistenceAdapter implements CommitTradePort {
 
     private final TradeRepository tradeRepository;
-
-    TradePersistenceAdapter(TradeRepository tradeRepository) {
-        this.tradeRepository = tradeRepository;
-    }
 
     @Override
     public void commitTrade(Trade trade) {

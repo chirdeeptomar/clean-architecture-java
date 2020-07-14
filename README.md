@@ -1,11 +1,19 @@
-# clean-architecture-java
+# Hexagonal Architecture
 Sample project for hexagonal architecture in Java
 
+Technologies Used: 
+1) Java 11+
+2) Spring Boot
+3) Spring Data JPA
+4) Lombok
+
+How to run: 
 1) Run ./gradlew trade-driver-adapter:clean build
 2) java -jar trade-driver-adapter/build/libs/trade-driver-adapter.jar
 
-Sample Request: 
-curl -X POST \
+##### Sample Request: 
+
+`curl -X POST \
   http://localhost:8081/v1/api/trades \
   -H 'Accept: */*' \
   -H 'Content-Type: application/json' \
@@ -17,3 +25,4 @@ curl -X POST \
 	"seller": "126a4cbf-dc40-4bfe-bbfe-d547b63d6cd4",
 	"rate": 150.00 
 }
+`
