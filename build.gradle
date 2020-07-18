@@ -1,23 +1,27 @@
 plugins {
-    id "org.springframework.boot" version "2.2.2.RELEASE" apply false
-    id "io.freefair.lombok" version "5.1.0" apply false
+    id "org.springframework.boot" version "2.2.2.RELEASE" apply(false)
+    id "io.freefair.lombok" version "5.1.0" apply(false)
 }
-
-apply plugin: 'java'
 
 group = 'uk.co.empyrean'
 version = '0.0.1-SNAPSHOT'
 
-sourceCompatibility = JavaVersion.VERSION_13
-targetCompatibility = JavaVersion.VERSION_13
-
 subprojects {
+    apply plugin: 'java'
     apply plugin: 'idea'
+    apply plugin: 'io.freefair.lombok'
 
     apply from: "$rootDir/dependencies.gradle"
 
+    sourceCompatibility = JavaVersion.VERSION_13
+    targetCompatibility = JavaVersion.VERSION_13
+
     configurations {
         compile.exclude module: "spring-boot-starter-tomcat"
+    }
+
+    test {
+        useJUnitPlatform()
     }
 }
 

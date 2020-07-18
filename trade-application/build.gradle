@@ -1,8 +1,5 @@
-plugins {
-    id "io.freefair.lombok"
-}
-
 apply plugin: 'java-library'
+apply from: "$rootDir/dependencies.gradle"
 
 ext.moduleName = 'uk.co.empyrean.trading.core'
 
@@ -23,9 +20,15 @@ compileJava {
 dependencies {
     implementation project(':hexagon-common')
 
+    api 'javax.validation:validation-api'
     implementation 'org.mapstruct:mapstruct-processor'
-    implementation 'javax.validation:validation-api'
     implementation 'org.springframework:spring-context'
 
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.mockito:mockito-core'
+    testImplementation 'org.hamcrest:hamcrest'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.hibernate:hibernate-validator'
+    testRuntimeOnly 'javax.el:javax.el-api:2.2.4'
+    testRuntimeOnly 'javax.xml.bind:jaxb-api:2.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
