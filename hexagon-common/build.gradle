@@ -1,5 +1,4 @@
 apply plugin: 'java-library'
-apply from: "$rootDir/dependencies.gradle"
 
 ext.moduleName = 'uk.co.empyrean.hexagon'
 

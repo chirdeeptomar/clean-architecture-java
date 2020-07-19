@@ -2,8 +2,6 @@ plugins {
     id "org.springframework.boot"
 }
 
-apply from: "$rootDir/dependencies.gradle"
-
 ext.moduleName = 'uk.co.empyrean.trading.adapters.driver.rest'
 
 compileJava {

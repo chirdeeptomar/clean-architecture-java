@@ -7,11 +7,16 @@ Technologies Used:
 3) Spring Data JPA
 4) Lombok
 
+Setup: 
+1) Run data.sql to load data into party table
+
 How to run: 
 1) Run ./gradlew trade-driver-adapter:clean build
-2) java -jar trade-driver-adapter/build/libs/trade-driver-adapter.jar
+2) java -jar trade-driver-adapter/build/libs/trade-driver-adapter-0.0.1-SNAPSHOT.jar
 
 ##### Sample Request: 
+
+###### POST REQUEST
 
 `curl -X POST \
   http://localhost:8081/v1/api/trades \
@@ -26,3 +31,7 @@ How to run:
 	"rate": 150.00 
 }
 `
+
+###### GET REQUEST
+
+`curl --location --request GET 'localhost:8081/v1/api/stocks/GOOG'`
